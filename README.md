@@ -1,95 +1,104 @@
-<<<<<<< HEAD
-#📊 Air Quality Data ETL Pipeline
+🌍 Air Quality ETL & Dashboard App
 
-Overview
 
-This project collects, cleans, transforms, and loads air quality data into a relational database (SQLite), enabling seamless analysis and visualization of environmental metrics across cities.
-It demonstrates best practices in Data Engineering: API data acquisition, ETL processing, relational database design, and data loading automation.
+A full ETL pipeline and data visualization platform for real-time air quality monitoring. This project was designed to meet the requirements of a data engineering assessment focused on Data Acquisition and ETL Processes.
 
-##🚀 Why This Project Matters
+📌 Why This Project?
+End-to-end ETL pipeline (Extract, Transform, Load)
+Real-time API integration with robust error handling
+Data quality assurance and transformation best practices
+Relational database design (SQLite)
+Streamlit dashboard for clear, interactive insights
 
-Air pollution is a major global health risk.
-Reliable, clean environmental data supports better decision-making and research.
-Building robust ETL pipelines is a key skill in data engineering and analytics.
-🧩 Project Structure
+🛠 Project Features
 
-├── fetch.py                 # Fetch raw data from APIs
-├── run_pipeline.py          # Data cleaning and transformation logic
-├── load_data.py             # Load processed data into SQLite database
-├── cleaned_aqi_data.csv     # Cleaned and transformed data CSV
-├── aqi_data.db              # SQLite database file
-├── requirements.txt         # Python dependencies
-└── README.md                # This documentation file
-📋 Features
+Step	Description
+1. Data Acquisition	Live data from Open AQ API. Error-handling for rate limits and nulls.
+2. Data Cleaning	Removes duplicates, fills missing values, and standardizes formats (e.g., dates, units).
+3. Data Transformation	Normalization, calculated fields (e.g., pollution indexes), data type consistency.
+4. Data Loading	Loads into a normalized SQLite relational database.
+5. Visualization	Interactive Streamlit dashboard with Plotly, Altair, and AgGrid.
+🧱 Database Design
 
-Fetch: Connects to air quality APIs and downloads raw data.
-Clean & Transform: Filters, fills missing values, normalizes units, and derives useful metrics.
-Load: Creates an optimized SQLite schema and loads data for fast querying.
-Reusable & Modular: Clear separation of concerns with reusable functions.
-Easy to Use: Step-by-step instructions for setup and running.
-⚙️ Setup Instructions
+The processed data is stored in a SQLite database with the following schema:
 
-1. Clone this repository:
+CREATE TABLE IF NOT EXISTS aqi_data (
+    id INTEGER PRIMARY KEY,
+    city TEXT,
+    country TEXT,
+    location TEXT,
+    parameter TEXT,
+    value REAL,
+    unit TEXT,
+    date_utc TEXT
+);
+📁 Repository Structure
+
+.
+├── fetch.py               # API acquisition + error handling
+├── etl_pipeline.py        # Data cleaning and transformation
+├── load_data.py           # SQLite DB loading + schema setup
+├── aqi_data.db            # Final SQLite database file
+├── cleaned_aqi_data.csv   # Cleaned dataset
+├── app.py                 # Streamlit dashboard
+├── requirements.txt       # Project dependencies
+├── README.md              # Project documentation
+└── screenshots/           # UI + DB schema screenshots
+🚀 Setup Instructions
+
+Clone the repo:
 git clone https://github.com/yourusername/air-quality-etl.git
 cd air-quality-etl
-2. Create a Python virtual environment (optional but recommended):
+(Optional) Create a virtual environment:
 python -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
-3. Install dependencies:
+source venv/bin/activate
+Install dependencies:
 pip install -r requirements.txt
-🏃 How to Run
+▶️ Running the ETL Pipeline
 
-##Step 1: Fetch Raw Data
+Fetch data
 python fetch.py
-This script downloads raw air quality data and saves it locally.
-
-##Step 2: Clean and Transform Data
+Clean & transform
 python etl_pipeline.py
-Processes raw data to produce cleaned and normalized datasets.
-
-##Step 3: Load Data into SQLite Database
+Load to database
 python load_data.py
-Creates database schema and loads cleaned data for analysis.
+🌐 View the Dashboard
 
-🔍 How to Query the Data
+✅ Deployed App: https://your-subdomain.streamlit.app
 
-You can explore the SQLite database using tools like:
+📌 Note: API token is not required to view the dashboard.
 
-DB Browser for SQLite
-Command line:
-sqlite3 aqi_data.db
-sqlite> SELECT * FROM aqi_data LIMIT 5;
-📈 Next Steps & Improvements
+🧪 How This Matches the Recruiter's Test
 
-Add visualization dashboards with tools like Streamlit or Dash.
-Expand database schema to include suppliers, products, and relationships.
-Automate pipeline with scheduling tools (Airflow, cron jobs).
-Integrate with cloud data warehouses for scalability.
-👨‍💻 Technologies Used
+Requirement	Implemented?	Notes
+Fetch from API	✅	Using Open AQ API
+Handle API errors	✅	Includes rate-limit handling and missing data
+Clean & normalize	✅	Unit normalization, deduplication, date standardization
+Transform data	✅	Added pollution indexes, normalization
+Load to relational DB	✅	SQLite with structured schema
+Use automation/pipeline	✅	Modular scripts for each ETL phase
+Visual output	✅	Live Streamlit dashboard with graphs & tables
+📈 Sample Visualizations
 
-Python 3.9+
-pandas for data processing
-SQLite for relational data storage
-Requests for API calls
-📝 Requirements
 
-See requirements.txt for exact package versions.
 
-🤝 Contact
+🧠 Technologies Used
 
-Created by EL HADRI HAJAR – feel free to reach out!
+Python 3.12
+Streamlit
+Pandas & NumPy
+Plotly, Seaborn, Altair
+SQLite
+Requests
+dotenv (for API key mgmt)
+Streamlit-AgGrid
+💡 Possible Extensions
 
-Email: hdrihajar@gmail.com
-GitHub: (https://github.com/hajar365)
+Automate ETL via Airflow / Prefect
+Add login & role-based access to the dashboard
+Push data to cloud warehouse (BigQuery, Snowflake)
+📬 Contact
 
-⭐ Why Hire Me?
-
-Strong understanding of end-to-end data engineering pipelines.
-Clean, modular, and maintainable code.
-Clear documentation and user guidance.
-Passion for environmental data and practical applications.
-=======
-# etl_project
-Air Quality ETL Dashboard  A Streamlit app that fetches live air quality data, cleans and stores it in a database, and displays interactive visualizations to monitor pollution trends and metrics in real time.
->>>>>>> 458d3a7f6cd3990dc609db5b8a1025eeac8d32dd
+Made with ❤️ by EL HADRI HAJAR
+📧 Email: hdrihajar@gmail.com
+🔗 GitHub: github.com/hajar365
