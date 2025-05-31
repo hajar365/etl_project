@@ -1,4 +1,5 @@
 🌍 Air Quality ETL & Dashboard App
+![Dashboard Screenshot](ui.png)
 
 
 A full ETL pipeline and data visualization platform for real-time air quality monitoring. This project was designed to meet the requirements of a data engineering assessment focused on Data Acquisition and ETL Processes.
