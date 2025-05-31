@@ -1,0 +1,8 @@
+Cleaned on: 2025-05-30 23:48:04
+Original rows: 200
+Final rows: 200
+
+Imputation summary:
+- no2: filled 200 missing values with mean nan
+- co: filled 200 missing values with mean nan
+- so2: filled 200 missing values with mean nan
