@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #📊 Air Quality Data ETL Pipeline
 
 Overview
@@ -88,3 +89,7 @@ Strong understanding of end-to-end data engineering pipelines.
 Clean, modular, and maintainable code.
 Clear documentation and user guidance.
 Passion for environmental data and practical applications.
+=======
+# etl_project
+Air Quality ETL Dashboard  A Streamlit app that fetches live air quality data, cleans and stores it in a database, and displays interactive visualizations to monitor pollution trends and metrics in real time.
+>>>>>>> 458d3a7f6cd3990dc609db5b8a1025eeac8d32dd
