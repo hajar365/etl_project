@@ -19,6 +19,7 @@ Step	Description
 4. Data Loading	Loads into a normalized SQLite relational database.
 5. Visualization	Interactive Streamlit dashboard with Plotly, Altair, and AgGrid.
 🧱 Database Design
+   ![shema](shema.png)
 📁 Repository Structure
 ![Repository structure](repo.png)
 🚀 Setup Instructions
