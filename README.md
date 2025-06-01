@@ -19,19 +19,6 @@ Step	Description
 4. Data Loading	Loads into a normalized SQLite relational database.
 5. Visualization	Interactive Streamlit dashboard with Plotly, Altair, and AgGrid.
 🧱 Database Design
-
-The processed data is stored in a SQLite database with the following schema:
-![SQL DATABASE](shema.png)
-CREATE TABLE IF NOT EXISTS aqi_data (
-    id INTEGER PRIMARY KEY,
-    city TEXT,
-    country TEXT,
-    location TEXT,
-    parameter TEXT,
-    value REAL,
-    unit TEXT,
-    date_utc TEXT
-);
 📁 Repository Structure
 ![Repository structure](repo.png)
 🚀 Setup Instructions
