@@ -1,7 +1,5 @@
 🌍 Air Quality ETL & Dashboard App
 ![Dashboard Screenshot](ui.png)
-![Pollution Chart](plot.png)
-
 
 A full ETL pipeline and data visualization platform for real-time air quality monitoring. This project was designed to meet the requirements of a data engineering assessment focused on Data Acquisition and ETL Processes.
 
@@ -23,7 +21,7 @@ Step	Description
 🧱 Database Design
 
 The processed data is stored in a SQLite database with the following schema:
-
+![SQL DATABASE](shema.png)
 CREATE TABLE IF NOT EXISTS aqi_data (
     id INTEGER PRIMARY KEY,
     city TEXT,
@@ -35,21 +33,11 @@ CREATE TABLE IF NOT EXISTS aqi_data (
     date_utc TEXT
 );
 📁 Repository Structure
-
-.
-├── fetch.py               # API acquisition + error handling
-├── etl_pipeline.py        # Data cleaning and transformation
-├── load_data.py           # SQLite DB loading + schema setup
-├── aqi_data.db            # Final SQLite database file
-├── cleaned_aqi_data.csv   # Cleaned dataset
-├── app.py                 # Streamlit dashboard
-├── requirements.txt       # Project dependencies
-├── README.md              # Project documentation
-└── screenshots/           # UI + DB schema screenshots
+![Repository structure](repo.png)
 🚀 Setup Instructions
 
 Clone the repo:
-git clone https://github.com/yourusername/air-quality-etl.git
+git clone https://github.com/hajar365/etl_project.git
 cd air-quality-etl
 (Optional) Create a virtual environment:
 python -m venv venv
@@ -66,22 +54,22 @@ Load to database
 python load_data.py
 🌐 View the Dashboard
 
-✅ Deployed App: https://your-subdomain.streamlit.app
+✅ Deployed App: https://commonshare-etlproject.streamlit.app
 
 📌 Note: API token is not required to view the dashboard.
 
-🧪 How This Matches the Recruiter's Test
+🧪 How This Matches the PROJECT's Test
 
-Requirement	Implemented?	Notes
-Fetch from API	✅	Using Open AQ API
-Handle API errors	✅	Includes rate-limit handling and missing data
-Clean & normalize	✅	Unit normalization, deduplication, date standardization
-Transform data	✅	Added pollution indexes, normalization
-Load to relational DB	✅	SQLite with structured schema
-Use automation/pipeline	✅	Modular scripts for each ETL phase
-Visual output	✅	Live Streamlit dashboard with graphs & tables
+Requirement	Implemented?	   Notes
+Fetch from API		           Using Open AQ API
+Handle API errors		       Includes rate-limit handling and missing data
+Clean & normalize		       Unit normalization, deduplication, date standardization
+Transform data		           Added pollution indexes, normalization
+Load to relational DB	     SQLite with structured schema
+Use automation/pipeline		   Modular scripts for each ETL phase
+Visual output		           Live Streamlit dashboard with graphs & tables
 📈 Sample Visualizations
-
+![Pollution Chart](plot.png)
 
 
 🧠 Technologies Used
@@ -99,6 +87,7 @@ Streamlit-AgGrid
 Automate ETL via Airflow / Prefect
 Add login & role-based access to the dashboard
 Push data to cloud warehouse (BigQuery, Snowflake)
+
 📬 Contact
 
 Made with ❤️ by EL HADRI HAJAR
